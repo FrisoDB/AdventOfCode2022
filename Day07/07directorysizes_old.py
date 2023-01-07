@@ -5,6 +5,7 @@ Created on Mon Dec 12 21:07:01 2022
 @author: friso
 """
 from copy import deepcopy
+import numpy as np
 
 
 # open the data file
@@ -52,7 +53,7 @@ for line in data:
     
     elif line[0][0] in '0123456789':
         #filesize+file
-        gather_directory[0] += int(line[0])
+        gather_directory[0] += np.int64(line[0])
 
         
 #check whether last directory is properly added to filesystem
@@ -70,7 +71,7 @@ while len(filesys)>0:
     
     for directory in filesys:
         #a = filesys[directory]
-        if type( filesys[directory][-1]) is int:
+        if type( filesys[directory][-1]) is np.int64:
             # directory size is known :)
             size = filesys[directory][-1]
             directorysizes[directory] = size
