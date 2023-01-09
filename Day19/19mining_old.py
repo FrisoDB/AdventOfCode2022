@@ -3,6 +3,7 @@
 Created on Tue Jan  3 22:08:15 2023
 
 @author: friso
+#veel te traag, geen oplossingsrichting
 """
 
 import numpy as np
