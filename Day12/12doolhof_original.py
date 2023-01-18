@@ -5,9 +5,8 @@ Created on Fri Dec 30 14:14:25 2022
 @author: friso
 Geïnspireerd door Jelle, tnx
 """
-import time
+
 import networkx as nx
-tic = time.perf_counter()
 
 def Get_height(char):
     if char=='S':
@@ -65,23 +64,6 @@ graph.add_edges_from(edges)
 answer1 = Shortest_path(graph, S, E)
 print(answer1)
 
-toc = time.perf_counter()
-print(f"Part 1 in {toc - tic:0.4f} seconds")
+answer2 =  [ Shortest_path(graph,start,E) for start in startingSquares]
+print(min(answer2))
 
-# answer2 =  [ Shortest_path(graph,start,E) for start in startingSquares]
-# print(min(answer2))
-
-# toc = time.perf_counter()
-# print(f"Part 2 in {toc - tic:0.4f} seconds")
-
-# answer2filter = [i for i in answer2 if i<66666]
-
-# toc = time.perf_counter()
-# print(f"Filter 2 in {toc - tic:0.4f} seconds")
-
-#answer2_improved
-distance2, path2 = nx.multi_source_dijkstra(graph, startingSquares, E)
-print(distance2)
-
-toc = time.perf_counter()
-print(f"Improved 2 in {toc - tic:0.4f} seconds")
